@@ -9,41 +9,33 @@ package mytunes.be;
  *
  * @author Kristian Bertelsen
  */
-public class Playlist {
-    public void createPlayList()
-            {
-                Playlist playList = new Playlist();
-            }
-    //edit the name of a playlist
-    //add a song to a playlist
-    public void addSong()
+public class Playlist
+    {
+    private String name;
+    private int songs;
+    private int time;
+    
+    public Playlist(String name, int songs, int time)
         {
-        
+        this.name = name;
+        this.songs = songs;
+        this.time = time;
         }
-    //save playlist in database
-    //play a song in a playlist
-    public void playSong()
+    public String getName()
         {
-        
+        return name;
         }
-    //play next song in a playlist
-    public void playNextSong()
+    public int getSongs()
         {
-        
+        return songs;
         }
-    //move a song in a playlist
-    public void moveSong()
+    public int getTime()
         {
-        
+        return time;
         }
-    //delete a song from a playlist
-    public void deleteSong()
+    @Override
+    public String toString()
         {
-        
+        return "Playlist{" + "name=" + name + ", songs=" + songs + ", time=" + time + '}';
         }
-    //delete a playlist
-    public void deletePlayList()
-        {
-        
-        }
-}
+    }
