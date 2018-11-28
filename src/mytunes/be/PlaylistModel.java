@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mytunes.BE;
-
+package myTunes.be;
+import myTunes.be.Playlist;
 /**
  *
  * @author simge
@@ -13,7 +13,7 @@ public class PlaylistModel
     {
     public void createPlayList()
             {
-                Playlist playList = new mytunes.be.Playlist();
+                //Playlist playList = new Playlist();
             }
     //edit the name of a playlist
     //add a song to a playlist
