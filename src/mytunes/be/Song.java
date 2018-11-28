@@ -3,23 +3,52 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mytunes.be;
+package myTunes.be;
 
 /**
  *
- * @author Kristian Bertelsen
+ * @author maxim
  */
-public class Song {
-    //create a new song
-    public void createNewSong()
-        {
+public class Song
+{
+    private int id;
+    private int releaseyear;
+    private String title;
+    
+    /**
+     *
+     * @param id
+     * @param title
+     * @param releaseyear
+     */
+    public Song(int id, int releaseyear, String title)
+    { 
+        this.id = id;
+        this.title = title;
+        this.releaseyear = releaseyear;
         
-        }
-    //edit a song
-    //save songlist in database
-    //delete a song
-    public void deleteSong()
-        {
-        
-        }
+    public int getId()
+    {
+        return id;
+    }
+
+    public String getTitle() 
+    {
+        return title;
+    }
+
+    public int getReleaseyear() 
+    {
+        return releaseyear;
+    }
+    
+      public void setTitle(String title) 
+    {
+        this.title = title;
+    }
+
+    public void setReleaseyear(int releaseyear) 
+    {
+        this.releaseyear = releaseyear;
+    }
 }
