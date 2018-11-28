@@ -1,0 +1,5 @@
+
+*.properties
+dist/MyTunes.jar
+dist/MyTunes.jnlp
+dist/web-files/dtjava.js
