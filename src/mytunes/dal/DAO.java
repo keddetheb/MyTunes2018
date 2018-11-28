@@ -24,6 +24,25 @@ public class DAO {
     
     ConnectionManager cM = new ConnectionManager();
     
+    public void addSong() throws SQLServerException, SQLException
+    {
+            try (Connection con = cM.getConnection()){
+            PreparedStatement stmt;
+            stmt = con.prepareStatement("INSERT INTO Song(name, artist, genre, length, path) VALUES(?,?,?,?,?)");
+            stmt.setString(1, "Thing");
+            stmt.setString(2, "Someone");
+            stmt.setString(3, "Something");
+            stmt.setDouble(4, 3.40);
+            stmt.setString(5, "Somewhere");
+            stmt.executeUpdate();
+        }
+        
+        catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
     public void addPlaylist(String playName) throws SQLServerException, SQLException
     {
             try (Connection con = cM.getConnection()){
