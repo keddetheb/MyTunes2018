@@ -13,28 +13,32 @@ public class Song
 {
     private int id;
     private int releaseyear;
+    private double time;
     private String title;
+    private String genre;
+    private String artist;
     
     /**
      *
      * @param id
      * @param title
      * @param releaseyear
+     * @param genre
+     * @param time
      */
-    public Song(int id, int releaseyear, String title)
+    public Song(int id, int releaseyear, double time, String title, String genre, String artist)
     { 
         this.id = id;
         this.title = title;
         this.releaseyear = releaseyear;
-        
+        this.genre = genre;
+        this.time = time;
+        this.artist = artist;
+    }
+    
     public int getId()
     {
         return id;
-    }
-
-    public String getTitle() 
-    {
-        return title;
     }
 
     public int getReleaseyear() 
@@ -42,13 +46,53 @@ public class Song
         return releaseyear;
     }
     
-      public void setTitle(String title) 
+    public double getTime()
     {
-        this.title = title;
+        return time;
     }
-
+    public String getGenre()
+    {
+        return genre;
+    }
+    
+    public String getTitle() 
+    {
+        return title;
+    }
+    
+    public String getArtist() 
+    {
+        return artist;
+    }
+    
+    public void setId(int id) 
+    {
+        this.id = id;
+    }
+    
     public void setReleaseyear(int releaseyear) 
     {
         this.releaseyear = releaseyear;
     }
+    
+    public void setTime(double time) 
+    {
+        this.time = time;
+    }
+    
+    public void setGenre(String genre) 
+    {
+        this.genre = genre;
+    }
+    
+    public void setTitle(String title) 
+    {
+        this.title = title;
+    }
+    
+    public void setArtist(String artist) 
+    {
+        this.artist = artist;
+    }
+    
 }
