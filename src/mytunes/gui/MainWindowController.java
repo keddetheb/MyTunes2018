@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mytunes.gui;
+package MyTunes.gui;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -17,9 +17,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import mytunes.be.PlaylistModel;
-import mytunes.be.Song;
-import mytunes.bll.BLLManager;
+import MyTunes.be.PlaylistModel;
+import MyTunes.be.Song;
+import MyTunes.bll.BLLManager;
 
 /**
  *
@@ -27,7 +27,8 @@ import mytunes.bll.BLLManager;
  */
 public class MainWindowController implements Initializable {
     
-    mytunes.bll.BLLManager BLL = new mytunes.bll.BLLManager();
+    MyTunes.bll.BLLManager BLL = new MyTunes.bll.BLLManager();
+    MyTunes.be.SongModel SongModel = new MyTunes.be.SongModel();
     @FXML
     private Label label;
     @FXML
@@ -63,7 +64,7 @@ public class MainWindowController implements Initializable {
     @FXML
     private TableColumn<?, ?> time;
     @FXML
-    private TableView<?> songsfelt;
+    private TableView<Song> songsfelt;
     @FXML
     private TableColumn<Song, String> titleColumn;
     @FXML
@@ -93,8 +94,8 @@ public class MainWindowController implements Initializable {
         titleColumn.setCellValueFactory(new PropertyValueFactory("title"));
         artistColumn.setCellValueFactory(new PropertyValueFactory("artist"));
         genreColumn.setCellValueFactory(new PropertyValueFactory("genre"));
-        songsfelt.setItems(mytunes.be.SongModel.getSongs());
-        mytunes.be.SongModel.loadSongs();
+        //songsfelt.setItems(SongModel.getSongs());
+        //SongModel.loadSongs();
     }    
 
     @FXML

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mytunes.dal;
+package MyTunes.dal;
 
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.sql.Connection;
@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import MyTunes.be.SongModel;
+import MyTunes.be.Song;
 
 /**
  *
@@ -55,5 +57,41 @@ public class DAO {
         catch (SQLException ex) {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public List<Song> getAllSongs() {
+        return getAllSongs("");
+    
+    }
+       public List<Song> getAllSongs(String search) {
+        
+        List<Song> songs = new ArrayList();
+      
+        try (Connection con = cM.getConnection()){
+            PreparedStatement stmt;
+            stmt = con.prepareStatement("SELECT * FROM Song WHERE Name like ? OR Artist like ?");
+            stmt.setString(1, "%"+search+"%");
+            stmt.setString(2, "%"+search+"%");
+            ResultSet rs =
+                    stmt.executeQuery();
+            
+            while(rs.next())
+            {
+                Song currentSong = new Song();
+                currentSong.setId(rs.getInt("SongID"));
+                currentSong.setTitle(rs.getString("Name"));
+                currentSong.setArtist(rs.getString("Artist"));
+                currentSong.setGenre(rs.getString("Category"));
+                currentSong.setTime(rs.getString("Time"));
+                currentSong.setPath(rs.getString("Path"));
+                songs.add(currentSong);
+            }
+        } 
+        catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+       
+        return songs;
     }
 }

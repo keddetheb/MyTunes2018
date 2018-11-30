@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mytunes.be;
+package MyTunes.be;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -13,8 +13,8 @@ import java.util.List;
 import java.util.Random;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import mytunes.be.Playlist;
-import mytunes.be.Song;
+import MyTunes.be.Playlist;
+import MyTunes.be.Song;
 /**
  *
  * @author simge

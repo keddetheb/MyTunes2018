@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mytunes.be;
+package MyTunes.be;
 
 /**
  *
@@ -13,10 +13,11 @@ public class Song
 {
     private int id;
     private int releaseyear;
-    private double time;
+    private String time;
     private String title;
     private String genre;
     private String artist;
+    private String path;
     
     /**
      *
@@ -25,8 +26,10 @@ public class Song
      * @param releaseyear
      * @param genre
      * @param time
+     * @param artist
+     * @param path
      */
-    public Song(int id, int releaseyear, double time, String title, String genre, String artist)
+    public Song(int id, int releaseyear, String time, String title, String genre, String artist, String path)
     { 
         this.id = id;
         this.title = title;
@@ -34,11 +37,16 @@ public class Song
         this.genre = genre;
         this.time = time;
         this.artist = artist;
+        this.path = path;
     }
 
-    Song(int releaseyear, double time, String title, String genre, String artist)
+    Song(int releaseyear, String time, String title, String genre, String artist)
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Song() {
+        
     }
     
     public int getId()
@@ -51,7 +59,7 @@ public class Song
         return releaseyear;
     }
     
-    public double getTime()
+    public String getTime()
     {
         return time;
     }
@@ -70,6 +78,11 @@ public class Song
         return artist;
     }
     
+    public String getPath()
+    {
+        return path;
+    }
+    
     public void setId(int id) 
     {
         this.id = id;
@@ -80,7 +93,7 @@ public class Song
         this.releaseyear = releaseyear;
     }
     
-    public void setTime(double time) 
+    public void setTime(String time) 
     {
         this.time = time;
     }
@@ -98,6 +111,11 @@ public class Song
     public void setArtist(String artist) 
     {
         this.artist = artist;
+    }
+    
+    public void setPath(String path)
+    {
+        this.path = path;
     }
     
     @Override

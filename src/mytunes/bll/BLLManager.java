@@ -3,18 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mytunes.bll;
+package MyTunes.bll;
 import java.sql.SQLException;
-import mytunes.dal.DAO;
+import MyTunes.dal.DAO;
+import MyTunes.be.Song;
+import java.util.List;
 /**
  *
  * @author kedde
  */
 public class BLLManager {
     
-    mytunes.dal.DAO DAO = new mytunes.dal.DAO();
+    DAO DAO = new DAO();
     
     public void addSong() throws SQLException {
         DAO.addSong();
+    }
+    
+    public List<Song> getAllSongs() {
+    return DAO.getAllSongs();
     }
 }
