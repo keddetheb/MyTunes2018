@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package myTunes.be;
+package mytunes.be;
 
 /**
  *
@@ -34,6 +34,11 @@ public class Song
         this.genre = genre;
         this.time = time;
         this.artist = artist;
+    }
+
+    Song(int releaseyear, double time, String title, String genre, String artist)
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public int getId()
@@ -95,4 +100,9 @@ public class Song
         this.artist = artist;
     }
     
+    @Override
+   public String toString()
+        {
+        return "Song{" + "id" + id + ", releaseyear" + releaseyear + ", time" + time + ", title" + title + ", genre" + genre + ", artist" + artist + '}';
+        }
 }

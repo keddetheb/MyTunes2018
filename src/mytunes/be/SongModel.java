@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 
-package myTunes.be;
+package mytunes.be;
 
 import java.io.File;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -14,6 +16,7 @@ import java.io.File;
  */
 public class SongModel
     {
+    private ObservableList<Song> songs = FXCollections.observableArrayList();
     //create a new song
     public void createNewSong(int year, String title)
         {
@@ -27,5 +30,10 @@ public class SongModel
         {
         
         }
+    
+    public ObservableList<Song> getSongs()
+    {
+        return songs;
+    }
     }
 

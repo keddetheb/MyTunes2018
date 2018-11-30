@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package myTunes.be;
+package mytunes.be;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -13,8 +13,8 @@ import java.util.List;
 import java.util.Random;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import myTunes.be.Playlist;
-import myTunes.be.Song;
+import mytunes.be.Playlist;
+import mytunes.be.Song;
 /**
  *
  * @author simge
@@ -38,7 +38,7 @@ public class PlaylistModel
     //add a song to a playlist
     public void addSong(Song song)
         {
-        pl.getSongs().add(song);
+        //pl.getSongs().add(song);
         }
 
     //play a song in a playlist

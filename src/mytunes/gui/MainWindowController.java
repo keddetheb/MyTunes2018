@@ -16,7 +16,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import myTunes.be.PlaylistModel;
+import javafx.scene.control.cell.PropertyValueFactory;
+import mytunes.be.PlaylistModel;
+import mytunes.be.Song;
 import mytunes.bll.BLLManager;
 
 /**
@@ -63,11 +65,11 @@ public class MainWindowController implements Initializable {
     @FXML
     private TableView<?> songsfelt;
     @FXML
-    private TableColumn<?, ?> title;
+    private TableColumn<Song, String> titleColumn;
     @FXML
-    private TableColumn<?, ?> artist;
+    private TableColumn<Song, String> artistColumn;
     @FXML
-    private TableColumn<?, ?> genre;
+    private TableColumn<Song, String> genreColumn;
     @FXML
     private TableColumn<?, ?> SongsonPlaylistfelt;
     @FXML
@@ -88,7 +90,11 @@ public class MainWindowController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        titleColumn.setCellValueFactory(new PropertyValueFactory("title"));
+        artistColumn.setCellValueFactory(new PropertyValueFactory("artist"));
+        genreColumn.setCellValueFactory(new PropertyValueFactory("genre"));
+        songsfelt.setItems(mytunes.be.SongModel.getSongs());
+        mytunes.be.SongModel.loadSongs();
     }    
 
     @FXML
