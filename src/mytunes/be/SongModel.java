@@ -6,18 +6,19 @@
 
 package myTunes.be;
 
+import java.io.File;
+
 /**
  *
  * @author simge
  */
 public class SongModel
     {
-            
     //create a new song
     public void createNewSong(int year, String title)
         {
-//            Song song = new Song(2, 2016, My Love);
-//            Song.add(song);
+            //Song song = new Song(2, 2016, "My Love");
+            //Song.add(song);
         }
     //edit a song
     //save songlist in database

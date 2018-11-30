@@ -16,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import myTunes.be.PlaylistModel;
 import mytunes.bll.BLLManager;
 
 /**
@@ -52,7 +53,7 @@ public class MainWindowController implements Initializable {
     @FXML
     private Button næste;
     @FXML
-    private TableView<?> playlistfelt;
+    private TableView<PlaylistModel> playlistfelt;
     @FXML
     private TableColumn<?, ?> name;
     @FXML
@@ -79,10 +80,11 @@ public class MainWindowController implements Initializable {
     private Button SongsClose;
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
+    private void handleButtonAction(ActionEvent event)
+        {
+        PlaylistModel model = new PlaylistModel();
+        model.createPlayList("happy");
+        }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -91,6 +93,7 @@ public class MainWindowController implements Initializable {
 
     @FXML
     private void newPlaylist(ActionEvent event) {
+        
     }
 
     @FXML

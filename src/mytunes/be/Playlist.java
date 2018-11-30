@@ -5,6 +5,8 @@
  */
 package myTunes.be;
 
+import java.util.List;
+
 /**
  *
  * @author Kristian Bertelsen
@@ -12,30 +14,29 @@ package myTunes.be;
 public class Playlist
     {
     private String name;
-    private int songs;
-    private int time;
+    private List<Song> songs;
+
     
-    public Playlist(String name, int songs, int time)
+    public Playlist(String name)
         {
         this.name = name;
-        this.songs = songs;
-        this.time = time;
         }
     public String getName()
         {
         return name;
         }
-    public int getSongs()
+    public List<Song> getSongs()
         {
         return songs;
         }
-    public int getTime()
+    // beregner tiden fra listen af sange
+    public double getTime()
         {
-        return time;
+        return -1;
         }
     @Override
     public String toString()
         {
-        return "Playlist{" + "name=" + name + ", songs=" + songs + ", time=" + time + '}';
+        return "Playlist{" + "name=" + name + ", songs=" + songs.size() + ", time=" + getTime() + '}';
         }
     }
