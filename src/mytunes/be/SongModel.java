@@ -11,7 +11,7 @@ import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import MyTunes.bll.BLLManager;
-
+import MyTunes.be.Song;
 /**
  *
  * @author simge
@@ -31,7 +31,9 @@ public class SongModel
     //delete a song
     public void deleteSong()
         {
-        
+            List<Song> deletsong = bllManager.getAllSongs();
+            
+            songs.remove(this);
         }
     
     public ObservableList<Song> getSongs()
@@ -39,7 +41,8 @@ public class SongModel
         return songs;
     }
     
-    public void loadSongs(){
+    public void loadSongs()
+    {
         List<Song> loadedSongs = bllManager.getAllSongs();
         
         songs.clear();

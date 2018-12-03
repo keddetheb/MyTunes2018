@@ -25,6 +25,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import MyTunes.be.Playlist;
 
 /**
  *
@@ -63,11 +64,11 @@ public class MainWindowController implements Initializable {
     @FXML
     private TableView<PlaylistModel> playlistfelt;
     @FXML
-    private TableColumn<?, ?> name;
+    private TableColumn<Playlist, String> name;
     @FXML
-    private TableColumn<?, ?> songs;
+    private TableColumn<Playlist, String> songs;
     @FXML
-    private TableColumn<?, ?> time;
+    private TableColumn<Playlist, String> playTime;
     @FXML
     private TableView<Song> songsfelt;
     @FXML
@@ -102,6 +103,9 @@ public class MainWindowController implements Initializable {
         artistColumn.setCellValueFactory(new PropertyValueFactory("artist"));
         genreColumn.setCellValueFactory(new PropertyValueFactory("genre"));
         timeColumn.setCellValueFactory(new PropertyValueFactory("time"));
+        name.setCellValueFactory(new PropertyValueFactory("name"));
+        songs.setCellValueFactory(new PropertyValueFactory("songs"));
+        playTime.setCellValueFactory(new PropertyValueFactory("time"));
         songsfelt.setItems(SongModel.getSongs());
         SongModel.loadSongs();
     }    
