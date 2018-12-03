@@ -20,6 +20,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import MyTunes.be.PlaylistModel;
 import MyTunes.be.Song;
 import MyTunes.bll.BLLManager;
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  *
@@ -131,8 +136,17 @@ public class MainWindowController implements Initializable {
     }
 
     @FXML
-    private void newSong(ActionEvent event) throws SQLException {
-        BLL.addSong();
+    private void newSong(ActionEvent event) throws SQLException, IOException {
+        
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CreateSong.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        MyTunes.gui.CreateSongController apwController=fxmlLoader.getController();
+        apwController.setSongModel(SongModel);
+        apwController.setMainWindowController(this);
+        stage.setTitle("CreateSong");
+        stage.setScene(new Scene(root1));
+        stage.show();
     }
 
     @FXML

@@ -26,16 +26,16 @@ public class DAO {
     
     ConnectionManager cM = new ConnectionManager();
     
-    public void addSong() throws SQLServerException, SQLException
+    public void addSong(String title, String artist, String genre, String time, String path) throws SQLServerException, SQLException
     {
             try (Connection con = cM.getConnection()){
             PreparedStatement stmt;
             stmt = con.prepareStatement("INSERT INTO Song(name, artist, genre, length, path) VALUES(?,?,?,?,?)");
-            stmt.setString(1, "Thing");
-            stmt.setString(2, "Someone");
-            stmt.setString(3, "Something");
-            stmt.setDouble(4, 3.40);
-            stmt.setString(5, "Somewhere");
+            stmt.setString(1, title);
+            stmt.setString(2, artist);
+            stmt.setString(3, genre);
+            stmt.setString(4, time);
+            stmt.setString(5, path);
             stmt.executeUpdate();
         }
         

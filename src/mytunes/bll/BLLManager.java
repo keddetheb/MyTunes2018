@@ -16,8 +16,8 @@ public class BLLManager {
     
     DAO DAO = new DAO();
     
-    public void addSong() throws SQLException {
-        DAO.addSong();
+    public void addSong(String title, String artist, String genre, String time, String path) throws SQLException {
+        DAO.addSong(title, artist, genre, time, path);
     }
     
     public List<Song> getAllSongs() {
