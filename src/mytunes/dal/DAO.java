@@ -78,12 +78,12 @@ public class DAO {
             while(rs.next())
             {
                 Song currentSong = new Song();
-                currentSong.setId(rs.getInt("SongID"));
-                currentSong.setTitle(rs.getString("Name"));
-                currentSong.setArtist(rs.getString("Artist"));
-                currentSong.setGenre(rs.getString("Category"));
-                currentSong.setTime(rs.getString("Time"));
-                currentSong.setPath(rs.getString("Path"));
+                currentSong.setId(rs.getInt("id"));
+                currentSong.setTitle(rs.getString("name"));
+                currentSong.setArtist(rs.getString("artist"));
+                currentSong.setGenre(rs.getString("genre"));
+                currentSong.setTime(rs.getString("length"));
+                currentSong.setPath(rs.getString("path"));
                 songs.add(currentSong);
             }
         } 

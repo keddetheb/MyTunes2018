@@ -29,25 +29,6 @@ public class Song
      * @param artist
      * @param path
      */
-    public Song(int id, int releaseyear, String time, String title, String genre, String artist, String path)
-    { 
-        this.id = id;
-        this.title = title;
-        this.releaseyear = releaseyear;
-        this.genre = genre;
-        this.time = time;
-        this.artist = artist;
-        this.path = path;
-    }
-
-    Song(int releaseyear, String time, String title, String genre, String artist)
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Song() {
-        
-    }
     
     public int getId()
     {

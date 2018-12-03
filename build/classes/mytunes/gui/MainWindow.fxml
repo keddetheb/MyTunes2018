@@ -36,7 +36,7 @@
          <columns>
             <TableColumn fx:id="titleColumn" prefWidth="75.0" text="Title" />
             <TableColumn fx:id="artistColumn" prefWidth="75.0" text="Artist" />
-            <TableColumn fx:id="time" prefWidth="75.0" text="Time" />
+            <TableColumn fx:id="timeColumn" prefWidth="75.0" text="Time" />
             <TableColumn fx:id="genreColumn" prefWidth="75.0" text="Genre" />
          </columns>
       </TableView>

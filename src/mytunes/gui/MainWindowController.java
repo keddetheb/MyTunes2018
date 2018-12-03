@@ -72,6 +72,8 @@ public class MainWindowController implements Initializable {
     @FXML
     private TableColumn<Song, String> genreColumn;
     @FXML
+    private TableColumn<Song, String> timeColumn;
+    @FXML
     private TableColumn<?, ?> SongsonPlaylistfelt;
     @FXML
     private Button tilVentes;
@@ -94,8 +96,9 @@ public class MainWindowController implements Initializable {
         titleColumn.setCellValueFactory(new PropertyValueFactory("title"));
         artistColumn.setCellValueFactory(new PropertyValueFactory("artist"));
         genreColumn.setCellValueFactory(new PropertyValueFactory("genre"));
-        //songsfelt.setItems(SongModel.getSongs());
-        //SongModel.loadSongs();
+        timeColumn.setCellValueFactory(new PropertyValueFactory("time"));
+        songsfelt.setItems(SongModel.getSongs());
+        SongModel.loadSongs();
     }    
 
     @FXML
