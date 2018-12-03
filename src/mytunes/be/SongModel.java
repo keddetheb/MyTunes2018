@@ -12,6 +12,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import MyTunes.bll.BLLManager;
 import MyTunes.be.Song;
+import java.sql.SQLException;
 /**
  *
  * @author simge
@@ -47,6 +48,9 @@ public class SongModel
         
         songs.clear();
         songs.addAll(loadedSongs);
+    }
+    public void addSong(String title, String artist, String genre, String time, String path) throws SQLException {
+        bllManager.addSong(title, artist, genre, time, path);
     }
     }
 
