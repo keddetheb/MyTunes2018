@@ -49,13 +49,9 @@ public class DAO {
         try (Connection con = cM.getConnection())
         {
         PreparedStatement stmt;
-        stmt = con.prepareStatement("DELETE FROM Song(name, artist, genre, length, path) VALUES(?,?,?,?,?)");
-        stmt.setString(1, "Thing");
-        stmt.setString(2, "Someone");
-        stmt.setString(3, "Something");
-        stmt.setDouble(4, 3.40);
-        stmt.setString(5, "Somewhere");
-        stmt.executeUpdate();    
+        stmt = con.prepareStatement("DELETE FROM Song WEHERE id = ?");
+        stmt.setString(1, "id");
+        stmt.executeUpdate();
         }
     }    
     
